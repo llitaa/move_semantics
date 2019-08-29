@@ -329,4 +329,57 @@ jQuery(document).ready(function($) {
   };
   OnePageNavigation();
 
+	// $('a[href^="#"]').on('click',function(e) {
+	 // e.preventDefault();
+	 // var target = this.hash;
+	 // var $target = $(target);
+	 // $('html, body').stop().animate({
+		// 'scrollTop': $target.offset().top
+	 // }, 900, 'swing', function () {
+		// window.location.hash = target;
+	 // });
+	// });
+	
+	// Get the height of the header
+	// var headerHeight = $("div#header").height();
+  // var headerHeight = $('header').height();
+
+	$('a[href="#section-contact-form"]').on('click',function(e) {
+	 e.preventDefault();
+	 var target = this.hash;
+	 var $target = $(target);
+	 var headerHeight = $('header').outerHeight();
+	 var scrollToPosition = $(target).offset().top - headerHeight;
+	 $('html, body').stop().animate({
+		'scrollTop': scrollToPosition
+	 }, 900, 'swing', function () {
+		window.location.hash = target;
+	 });
+	});
+	
+	document.candidateContactForm.onsubmit=function(evt)
+	{
+		alert("Sorry we are not ready to collect your data. Please email us.");
+		evt.preventDefault();
+		msg.innerHTML = "Sorry we are not ready to collect your data. Please email us.";
+		return false;
+		
+		// if (document.candidateContactForm.fname.value == '') {
+			// alert("Please specify your Name");
+			// document.candidateContactForm.fname.focus();
+			// return false;	
+		// }
+		// else if(document.candidateContactForm.lname.value == '' ) {
+			// alert("Please specify your Last name");
+			// document.candidateContactForm.lname.focus();
+			// return false;
+		// }
+		// else if(document.candidateContactForm.email.value == '' ) {
+			// alert("Please specify your EMail");
+			// document.candidateContactForm.email.focus();
+			// return false;
+		// }
+		// return true;
+	}
+
 });
