@@ -344,7 +344,7 @@ jQuery(document).ready(function($) {
 	// var headerHeight = $("div#header").height();
   // var headerHeight = $('header').height();
 
-	$('a[href="#section-contact-form"]').on('click',function(e) {
+	$('a[href="#section-how-it-works"]').on('click',function(e) {
 	 e.preventDefault();
 	 var target = this.hash;
 	 var $target = $(target);
